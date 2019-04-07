@@ -21,7 +21,6 @@
   },
   "homepage": "https://github.com/erlorenz/pelanding#readme",
   "dependencies": {
-    "lit-element": "^2.1.0",
     "sanitize.css": "^8.0.0"
   },
   "devDependencies": {

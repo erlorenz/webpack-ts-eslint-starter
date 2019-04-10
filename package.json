@@ -1,5 +1,5 @@
 {
-  "name": "pelanding",
+  "name": "webpack-ts-eslint-starter",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,20 +7,21 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --config ./webpack/webpack.config.development.js",
     "build": "webpack --config ./webpack/webpack.config.production.js",
-    "start": "node ./dist/index.js"
+    "clean": "rimraf dist && rimraf .git"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/erlorenz/pelanding.git"
+    "url": "git+https://github.com/erlorenz/webpack-ts-eslint-starter.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/erlorenz/pelanding/issues"
+    "url": "https://github.com/erlorenz/webpack-ts-eslint-starter/issues"
   },
-  "homepage": "https://github.com/erlorenz/pelanding#readme",
+  "homepage": "https://github.com/erlorenz/webpack-ts-eslint-starter#readme",
   "dependencies": {
+    "lit-element": "^2.1.0",
     "sanitize.css": "^8.0.0"
   },
   "devDependencies": {
@@ -47,6 +48,7 @@
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "postcss-loader": "^3.0.0",
     "prettier": "^1.16.4",
+    "rimraf": "^2.6.3",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "svg-inline-loader": "^0.8.0",

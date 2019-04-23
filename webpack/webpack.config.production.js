@@ -35,28 +35,19 @@ module.exports = merge(common, {
     }),
   ],
   optimization: {
+    // Terser is default for javascript, need to add CSS minifying
     minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
     splitChunks: {
-      chunks: 'all',
-      minSize: 30000,
-      minChunks: 1,
-      maxAsyncRequests: 5,
-      maxInitialRequests: 3,
-      name: true,
       cacheGroups: {
         commons: {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendor',
           chunks: 'all',
-        },
-        main: {
-          chunks: 'all',
           minChunks: 2,
-          reuseExistingChunk: true,
-          enforce: true,
         },
       },
     },
+    // Only separate runtime if using larger libraries
     runtimeChunk: true,
   },
 });

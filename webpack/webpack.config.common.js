@@ -14,6 +14,7 @@ module.exports = {
             options: {
               // Inline files smaller than 10kb
               limit: 10 * 1024,
+              name: 'assets/img/[name].[ext]',
             },
           },
         ],
@@ -27,6 +28,7 @@ module.exports = {
               // Inline files smaller than 10 kB
               limit: 10 * 1024,
               noquotes: true,
+              name: 'assets/img/[name].[ext]',
             },
           },
         ],
@@ -39,6 +41,10 @@ module.exports = {
       {
         test: /\.html$/,
         use: ['html-loader'],
+        // For lazy loading images
+        options: {
+          attrs: [':data-src'],
+        },
       },
     ],
   },
@@ -46,6 +52,8 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: './src/index.html',
       filename: './index.html',
+      // If Multi Page Site add chunks here
+      // chunks: ['main', 'vendor'],
     }),
     new CopyPlugin([{ from: 'public' }]), // Copy things like favicons, 3rd party files
   ],
